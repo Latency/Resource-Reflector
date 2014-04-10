@@ -1,2 +1,0 @@
-C:\Users\Latency\Desktop\ImageGrabber\ImageGrabber\bin\Debug\Embedded Image Grabber.exe.config
-C:\Users\Latency\Documents\Visual Studio 2013\Projects\Resource-Reflector\ImageGrabber\bin\Debug\Embedded Image Grabber.exe.config
