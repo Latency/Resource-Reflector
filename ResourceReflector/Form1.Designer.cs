@@ -40,8 +40,9 @@ namespace ResourceReflector {
       this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
       this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
       this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-      this.saveAllToolStripButton = new System.Windows.Forms.ToolStripButton();
       this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
+      this.saveAllToolStripButton = new System.Windows.Forms.ToolStripButton();
+      this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
       this.copyToolStripButton = new System.Windows.Forms.ToolStripButton();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.toolStripComboBox = new System.Windows.Forms.ToolStripComboBox();
@@ -61,9 +62,8 @@ namespace ResourceReflector {
       this.tabPageIndividualImage = new System.Windows.Forms.TabPage();
       this.pictureBox = new System.Windows.Forms.PictureBox();
       this.propertyGrid = new System.Windows.Forms.PropertyGrid();
-      this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-      ((System.ComponentModel.ISupportInitialize) (this.bindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize) (this.bindingNavigator)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).BeginInit();
       this.bindingNavigator.SuspendLayout();
       this.statusStrip.SuspendLayout();
       this.splitContainer.Panel1.SuspendLayout();
@@ -71,10 +71,10 @@ namespace ResourceReflector {
       this.splitContainer.SuspendLayout();
       this.tabControl.SuspendLayout();
       this.tabPageAllImages.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize) (this.dataGridView)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
       this.menu.SuspendLayout();
       this.tabPageIndividualImage.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize) (this.pictureBox)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
       this.SuspendLayout();
       // 
       // bindingSource
@@ -129,7 +129,7 @@ namespace ResourceReflector {
       // openToolStripButton
       // 
       this.openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.openToolStripButton.Image = ((System.Drawing.Image) (resources.GetObject("openToolStripButton.Image")));
+      this.openToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripButton.Image")));
       this.openToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
       this.openToolStripButton.Name = "openToolStripButton";
       this.openToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -141,7 +141,7 @@ namespace ResourceReflector {
       // 
       this.closeToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.closeToolStripButton.Enabled = false;
-      this.closeToolStripButton.Image = ((System.Drawing.Image) (resources.GetObject("closeToolStripButton.Image")));
+      this.closeToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("closeToolStripButton.Image")));
       this.closeToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
       this.closeToolStripButton.Name = "closeToolStripButton";
       this.closeToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -157,7 +157,7 @@ namespace ResourceReflector {
       // bindingNavigatorMoveFirstItem
       // 
       this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image) (resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+      this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
       this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
       this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
       this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
@@ -166,7 +166,7 @@ namespace ResourceReflector {
       // bindingNavigatorMovePreviousItem
       // 
       this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image) (resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+      this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
       this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
       this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
       this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
@@ -194,7 +194,7 @@ namespace ResourceReflector {
       // bindingNavigatorMoveNextItem
       // 
       this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image) (resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+      this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
       this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
       this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
       this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
@@ -203,7 +203,7 @@ namespace ResourceReflector {
       // bindingNavigatorMoveLastItem
       // 
       this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image) (resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+      this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
       this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
       this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
       this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
@@ -214,33 +214,38 @@ namespace ResourceReflector {
       this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
       this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
       // 
-      // saveAllToolStripButton
-      // 
-      this.saveAllToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.saveAllToolStripButton.Enabled = false;
-      this.saveAllToolStripButton.Image = ((System.Drawing.Image) (resources.GetObject("saveAllToolStripButton.Image")));
-      this.saveAllToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-      this.saveAllToolStripButton.Name = "saveAllToolStripButton";
-      this.saveAllToolStripButton.Size = new System.Drawing.Size(23, 22);
-      this.saveAllToolStripButton.Text = "&Save All";
-      this.saveAllToolStripButton.Click += new System.EventHandler(this.saveAllToolStripButton_Click);
-      // 
       // saveToolStripButton
       // 
       this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.saveToolStripButton.Enabled = false;
-      this.saveToolStripButton.Image = ((System.Drawing.Image) (resources.GetObject("saveToolStripButton.Image")));
+      this.saveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripButton.Image")));
       this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
       this.saveToolStripButton.Name = "saveToolStripButton";
       this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
       this.saveToolStripButton.Text = "&Save";
       this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
       // 
+      // saveAllToolStripButton
+      // 
+      this.saveAllToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      this.saveAllToolStripButton.Enabled = false;
+      this.saveAllToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("saveAllToolStripButton.Image")));
+      this.saveAllToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+      this.saveAllToolStripButton.Name = "saveAllToolStripButton";
+      this.saveAllToolStripButton.Size = new System.Drawing.Size(23, 22);
+      this.saveAllToolStripButton.Text = "&Save All";
+      this.saveAllToolStripButton.Click += new System.EventHandler(this.saveAllToolStripButton_Click);
+      // 
+      // toolStripSeparator3
+      // 
+      this.toolStripSeparator3.Name = "toolStripSeparator3";
+      this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+      // 
       // copyToolStripButton
       // 
       this.copyToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.copyToolStripButton.Enabled = false;
-      this.copyToolStripButton.Image = ((System.Drawing.Image) (resources.GetObject("copyToolStripButton.Image")));
+      this.copyToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("copyToolStripButton.Image")));
       this.copyToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
       this.copyToolStripButton.Name = "copyToolStripButton";
       this.copyToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -270,7 +275,7 @@ namespace ResourceReflector {
       // 
       this.propertiesToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.propertiesToolStripButton.Enabled = false;
-      this.propertiesToolStripButton.Image = ((System.Drawing.Image) (resources.GetObject("propertiesToolStripButton.Image")));
+      this.propertiesToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("propertiesToolStripButton.Image")));
       this.propertiesToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
       this.propertiesToolStripButton.Name = "propertiesToolStripButton";
       this.propertiesToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -363,20 +368,20 @@ namespace ResourceReflector {
             this.menuItemCopy,
             this.menuItemProperties});
       this.menu.Name = "menu";
-      this.menu.Size = new System.Drawing.Size(160, 70);
+      this.menu.Size = new System.Drawing.Size(156, 92);
       // 
       // menuItemSave
       // 
-      this.menuItemSave.Image = ((System.Drawing.Image) (resources.GetObject("menuItemSave.Image")));
+      this.menuItemSave.Image = ((System.Drawing.Image)(resources.GetObject("menuItemSave.Image")));
       this.menuItemSave.ImageTransparentColor = System.Drawing.Color.Fuchsia;
       this.menuItemSave.Name = "menuItemSave";
-      this.menuItemSave.Size = new System.Drawing.Size(159, 22);
+      this.menuItemSave.Size = new System.Drawing.Size(155, 22);
       this.menuItemSave.Text = "Save";
       this.menuItemSave.Click += new System.EventHandler(this.menuItemSave_Click);
       // 
       // menuItemSaveAll
       // 
-      this.menuItemSaveAll.Image = ((System.Drawing.Image) (resources.GetObject("menuItemSaveAll.Image")));
+      this.menuItemSaveAll.Image = ((System.Drawing.Image)(resources.GetObject("menuItemSaveAll.Image")));
       this.menuItemSaveAll.ImageTransparentColor = System.Drawing.Color.Fuchsia;
       this.menuItemSaveAll.Name = "menuItemSaveAll";
       this.menuItemSaveAll.Size = new System.Drawing.Size(155, 22);
@@ -385,17 +390,17 @@ namespace ResourceReflector {
       // 
       // menuItemCopy
       // 
-      this.menuItemCopy.Image = ((System.Drawing.Image) (resources.GetObject("menuItemCopy.Image")));
+      this.menuItemCopy.Image = ((System.Drawing.Image)(resources.GetObject("menuItemCopy.Image")));
       this.menuItemCopy.Name = "menuItemCopy";
-      this.menuItemCopy.Size = new System.Drawing.Size(159, 22);
+      this.menuItemCopy.Size = new System.Drawing.Size(155, 22);
       this.menuItemCopy.Text = "Copy";
       this.menuItemCopy.Click += new System.EventHandler(this.menuItemCopy_Click);
       // 
       // menuItemProperties
       // 
-      this.menuItemProperties.Image = ((System.Drawing.Image) (resources.GetObject("menuItemProperties.Image")));
+      this.menuItemProperties.Image = ((System.Drawing.Image)(resources.GetObject("menuItemProperties.Image")));
       this.menuItemProperties.Name = "menuItemProperties";
-      this.menuItemProperties.Size = new System.Drawing.Size(159, 22);
+      this.menuItemProperties.Size = new System.Drawing.Size(155, 22);
       this.menuItemProperties.Text = "View Properties";
       this.menuItemProperties.Click += new System.EventHandler(this.menuItemProperties_Click);
       // 
@@ -429,12 +434,7 @@ namespace ResourceReflector {
       this.propertyGrid.Size = new System.Drawing.Size(295, 639);
       this.propertyGrid.TabIndex = 5;
       // 
-      // toolStripSeparator3
-      // 
-      this.toolStripSeparator3.Name = "toolStripSeparator3";
-      this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
-      // 
-      // ImageGrabberForm
+      // Form1
       // 
       this.AllowDrop = true;
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -443,14 +443,14 @@ namespace ResourceReflector {
       this.Controls.Add(this.splitContainer);
       this.Controls.Add(this.statusStrip);
       this.Controls.Add(this.bindingNavigator);
-      this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-      this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
-      this.Name = "ImageGrabberForm";
-      this.Text = "Embedded Image Grabber";
+      this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+      this.Name = "Form1";
+      this.Text = "Resource Reflector";
       this.DragDrop += new System.Windows.Forms.DragEventHandler(this.ImageGrabberForm_DragDrop);
       this.DragEnter += new System.Windows.Forms.DragEventHandler(this.ImageGrabberForm_DragEnter);
-      ((System.ComponentModel.ISupportInitialize) (this.bindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize) (this.bindingNavigator)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).EndInit();
       this.bindingNavigator.ResumeLayout(false);
       this.bindingNavigator.PerformLayout();
       this.statusStrip.ResumeLayout(false);
@@ -460,12 +460,13 @@ namespace ResourceReflector {
       this.splitContainer.ResumeLayout(false);
       this.tabControl.ResumeLayout(false);
       this.tabPageAllImages.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize) (this.dataGridView)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
       this.menu.ResumeLayout(false);
       this.tabPageIndividualImage.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize) (this.pictureBox)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
+
     }
 
     #endregion
