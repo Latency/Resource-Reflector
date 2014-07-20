@@ -174,3 +174,5 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
+
+ResourceReflector.v12.suo
