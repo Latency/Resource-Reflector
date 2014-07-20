@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace ImageGrabber {
+namespace ResourceReflector {
   internal static class Program {
     public static DictionaryBindingList<TKey, TValue> ToBindingList<TKey, TValue>(this IDictionary<TKey, TValue> data) {
       return new DictionaryBindingList<TKey, TValue>(data);

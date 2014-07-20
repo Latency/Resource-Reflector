@@ -8,8 +8,8 @@
     <ProjectGuid>{B8BE2AA2-CE62-43A9-80F4-4B6AEFCD8548}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ImageGrabber</RootNamespace>
-    <AssemblyName>Embedded Image Grabber</AssemblyName>
+    <RootNamespace>ResourceReflector</RootNamespace>
+    <AssemblyName>ResourceReflector</AssemblyName>
     <ApplicationIcon>camera.ico</ApplicationIcon>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileUpgradeFlags>
@@ -55,7 +55,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>ImageGrabber.Program</StartupObject>
+    <StartupObject>ResourceReflector.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
@@ -63,7 +63,6 @@
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xaml" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>

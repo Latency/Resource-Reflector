@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace ImageGrabber {
+namespace ResourceReflector {
   /// <summary>
   /// </summary>
   /// <typeparam name="TKey"></typeparam>

@@ -1,4 +1,4 @@
-namespace ImageGrabber {
+namespace ResourceReflector {
   partial class Form1 {
     /// <summary>
     /// Required designer variable.

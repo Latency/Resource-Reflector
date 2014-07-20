@@ -21,7 +21,7 @@ using PixelFormat = System.Drawing.Imaging.PixelFormat;
 using Point = System.Drawing.Point;
 using Size = System.Drawing.Size;
 
-namespace ImageGrabber {
+namespace ResourceReflector {
 
   #region ImageInfo
 

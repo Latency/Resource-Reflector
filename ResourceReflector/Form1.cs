@@ -16,9 +16,9 @@ using System.Linq;
 using System.Reflection;
 using System.Resources;
 using System.Windows.Forms;
-using ImageGrabber.Properties;
+using ResourceReflector.Properties;
 
-namespace ImageGrabber {
+namespace ResourceReflector {
   public partial class Form1 : Form {
     #region Data
 
