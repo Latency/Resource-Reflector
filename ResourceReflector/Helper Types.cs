@@ -32,8 +32,6 @@ namespace ResourceReflector {
 
     #region Data
 
-    private readonly ResourceDetails _resourceDetails;
-    private readonly object _sourceObject;
     private Image _image;
 
     #endregion // Data
@@ -41,8 +39,8 @@ namespace ResourceReflector {
     #region Constructor
 
     public ImageInfo(object sourceObject, string resourceName) {
-      _sourceObject = sourceObject;
-      _resourceDetails = new ResourceDetails(Image, DetermineImageType(), resourceName);
+      SourceObject = sourceObject;
+      ResourceDetails = new ResourceDetails(Image, DetermineImageType(), resourceName);
     }
 
     #endregion // Constructor
@@ -53,18 +51,25 @@ namespace ResourceReflector {
       get {
         if (_image != null)
           return _image;
-        if (_sourceObject is Icon)
-          _image = (_sourceObject as Icon).ToBitmap();
-        else if (_sourceObject is Cursor) {
-          var cursor = _sourceObject as Cursor;
-          var size = cursor.Size;
-          _image = new Bitmap(size.Width, size.Height);
-          using (var grfx = Graphics.FromImage(_image))
-            cursor.Draw(grfx, new Rectangle(Point.Empty, size));
-        } else if (_sourceObject is Image)
-          _image = _sourceObject as Image;
-        else
-          Debug.Fail("Unexpected type of source object.");
+        var o = SourceObject as Icon;
+        if (o != null)
+          _image = o.ToBitmap();
+        else {
+          var cursor1 = SourceObject as Cursor;
+          if (cursor1 != null) {
+            var cursor = cursor1;
+            var size = cursor.Size;
+            _image = new Bitmap(size.Width, size.Height);
+            using (var grfx = Graphics.FromImage(_image))
+              cursor.Draw(grfx, new Rectangle(Point.Empty, size));
+          } else {
+            var image = SourceObject as Image;
+            if (image != null)
+              _image = image;
+            else
+              Debug.Fail("Unexpected type of source object.");
+          }
+        }
         return _image;
       }
     }
@@ -157,13 +162,13 @@ namespace ResourceReflector {
     #region DetermineImageType
 
     private ImageType DetermineImageType() {
-      if (_sourceObject is Icon)
+      if (SourceObject is Icon)
         return ImageType.Icon;
 
-      if (_sourceObject is Cursor)
+      if (SourceObject is Cursor)
         return ImageType.Cursor;
 
-      if (_sourceObject is Image)
+      if (SourceObject is Image)
         return ImageType.Image;
 
       throw new ApplicationException("Unexpected type of source object.");
@@ -173,29 +178,22 @@ namespace ResourceReflector {
 
     #region ResourceDetails
 
-    public ResourceDetails ResourceDetails {
-      get { return _resourceDetails; }
-    }
+    public ResourceDetails ResourceDetails { get; }
 
     #endregion // ResourceDetails
 
     #region SourceObject
 
     [Browsable(false)]
-    public object SourceObject {
-      get { return _sourceObject; }
-    }
+    public object SourceObject { get; }
 
     #endregion // SourceObject
 
     #region IDisposable Members
 
     public void Dispose() {
-      if (_image != null)
-        _image.Dispose();
-
-      if (_sourceObject is IDisposable)
-        (_sourceObject as IDisposable).Dispose();
+      _image?.Dispose();
+      (SourceObject as IDisposable)?.Dispose();
     }
 
     #endregion // IDisposable Members
@@ -209,18 +207,16 @@ namespace ResourceReflector {
   public struct ResourceDetails {
     #region Data
 
-    private readonly Image image;
-    private readonly ImageType imageType;
-    private readonly string resourceName;
+    private readonly Image _image;
 
     #endregion // Data
 
     #region Constructor
 
     public ResourceDetails(Image image, ImageType imageType, string resourceName) {
-      this.image = image;
-      this.imageType = imageType;
-      this.resourceName = resourceName;
+      _image = image;
+      ImageType = imageType;
+      ResourceName = resourceName;
     }
 
     #endregion // Constructor
@@ -229,51 +225,35 @@ namespace ResourceReflector {
 
     [Description("The horizontal resolution, in pixels per inch, of the image.")]
     [Category("Image Data")]
-    public float HorizontalResolution {
-      get { return image.HorizontalResolution; }
-    }
+    public float HorizontalResolution => _image.HorizontalResolution;
 
     [Description("The type of file the image was stored as in the assembly.")]
     [Category("Resource Data")]
-    public ImageType ImageType {
-      get { return imageType; }
-    }
+    public ImageType ImageType { get; }
 
     [Description("The width and height of the image.")]
     [Category("Image Data")]
-    public SizeF PhysicalDimension {
-      get { return image.PhysicalDimension; }
-    }
+    public SizeF PhysicalDimension => _image.PhysicalDimension;
 
     [Description("The pixel format of the image.")]
     [Category("Image Data")]
-    public PixelFormat PixelFormat {
-      get { return image.PixelFormat; }
-    }
+    public PixelFormat PixelFormat => _image.PixelFormat;
 
     [Description("The format of the image (an ImageFormat value).")]
     [Category("Image Data")]
-    public ImageFormat RawFormat {
-      get { return image.RawFormat; }
-    }
+    public ImageFormat RawFormat => _image.RawFormat;
 
     [Description("The name of the resource in the assembly.")]
     [Category("Resource Data")]
-    public string ResourceName {
-      get { return resourceName; }
-    }
+    public string ResourceName { get; }
 
     [Description("The width and height, in pixels, of the image.")]
     [Category("Image Data")]
-    public Size Size {
-      get { return image.Size; }
-    }
+    public Size Size => _image.Size;
 
     [Description("The horizontal resolution, in pixels per inch, of the image.")]
     [Category("Image Data")]
-    public float VerticalResolution {
-      get { return image.VerticalResolution; }
-    }
+    public float VerticalResolution => _image.VerticalResolution;
 
     #endregion // Properties
   }

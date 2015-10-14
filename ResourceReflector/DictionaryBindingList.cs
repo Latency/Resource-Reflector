@@ -17,24 +17,21 @@ namespace ResourceReflector {
   [Serializable]
   public sealed class Pair<TKey, TValue> {
     private readonly IDictionary<TKey, TValue> _data;
-    private readonly TKey _key;
 
     public Pair(TKey key, IDictionary<TKey, TValue> data) {
-      _key = key;
+      Key = key;
       _data = data;
     }
 
-    public TKey Key {
-      get { return _key; }
-    }
+    public TKey Key { get; }
 
     public TValue Value {
       get {
         TValue value;
-        _data.TryGetValue(_key, out value);
+        _data.TryGetValue(Key, out value);
         return value;
       }
-      set { _data[_key] = value; }
+      set { _data[Key] = value; }
     }
   }
 

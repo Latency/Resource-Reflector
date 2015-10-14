@@ -369,16 +369,19 @@ namespace ResourceReflector {
               foreach (DictionaryEntry entry in reader) {
                 if (entry.Value is Icon || entry.Value is Image)
                   imageInfos.Add(new ImageInfo(entry.Value, name), false);
-                else if (entry.Value is ImageListStreamer) {
-                  // Load an ImageList with the ImageListStreamer and store a reference to every image it contains.
-                  using (var imageList = new ImageList()) {
-                    imageList.ImageStream = entry.Value as ImageListStreamer;
-                    for (var idx = 0; idx < imageList.Images.Count; idx++) {
-                      // Save node name.  - "AssemblyOfImages.Form1.resources"
-                      //  Add key name + strip type name.
-                      var key = entry.Key.ToString();
-                      var typeName = key.Remove(key.LastIndexOf('.'));
-                      imageInfos.Add(new ImageInfo(imageList.Images[idx], String.Format("{0}_{1:D2}", typeName, idx)), false);
+                else {
+                  var streamer = entry.Value as ImageListStreamer;
+                  if (streamer != null) {
+                    // Load an ImageList with the ImageListStreamer and store a reference to every image it contains.
+                    using (var imageList = new ImageList()) {
+                      imageList.ImageStream = streamer;
+                      for (var idx = 0; idx < imageList.Images.Count; idx++) {
+                        // Save node name.  - "AssemblyOfImages.Form1.resources"
+                        //  Add key name + strip type name.
+                        var key = entry.Key.ToString();
+                        var typeName = key.Remove(key.LastIndexOf('.'));
+                        imageInfos.Add(new ImageInfo(imageList.Images[idx], $"{typeName}_{idx:D2}"), false);
+                      }
                     }
                   }
                 }
@@ -473,8 +476,7 @@ namespace ResourceReflector {
         foreach (var imgInfo in imageInfos)
           imgInfo.Dispose();
       }
-      if (_assembly.Value != null)
-        _assembly.Value.Clear();
+      _assembly.Value?.Clear();
       dataGridView.Rows.Clear();
       // Update the text/tooltip in the StatusStrip to the new assembly info.
       toolStripStatusLabel.Text = toolStripStatusLabel.ToolTipText = String.Empty;
@@ -554,7 +556,7 @@ namespace ResourceReflector {
               goto default;
 
             using (var stream = new FileStream(fileName, FileMode.Create))
-              (imageInfo.SourceObject as Icon).Save(stream);
+              ((Icon) imageInfo.SourceObject).Save(stream);
             break;
 
             #endregion // Icon
@@ -630,17 +632,17 @@ namespace ResourceReflector {
         if (file != last)
           cnt = 0;
         last = file;
-        file = last + String.Format("-{0:D2}", ++cnt);
+        file = last + $"-{++cnt:D2}";
         SaveResource(item, path + "\\" + file + ext);
       }
 
       if (failures.Count <= 0)
         return;
 
-      var list = String.Empty;
+      var list = string.Empty;
       var idx = 0;
-      list = failures.Aggregate(list, (current, kvp) => current + String.Format("{2:D2} - {1}\\{0}\r\n", kvp.Key, kvp.Value, ++idx));
-      MessageBox.Show(String.Format("Unable to save the following items:\n{0}", list), @"Save Failures", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+      list = failures.Aggregate(list, (current, kvp) => current + string.Format("{2:D2} - {1}\\{0}\r\n", kvp.Key, kvp.Value, ++idx));
+      MessageBox.Show($"Unable to save the following items:\n{list}", @"Save Failures", MessageBoxButtons.OK, MessageBoxIcon.Warning);
     }
 
     #endregion // SaveAllResources

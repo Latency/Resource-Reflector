@@ -3,7 +3,7 @@ Resource-Reflector
 
 A .NET application written in C# for viewing and extracting assembly resources.
 
-<p><img height=391 alt="Sample image" src="http://bio-hazard.cx/ResourceReflector/images/ResourceReflector.jpg" width=600></p>
+<p><img height=391 alt="Sample image" src="http://bio-hazard.us/ResourceReflector/images/ResourceReflector.png" width=600></p>
 <ul>
   <li><a href="#introduction">Introduction</a>
   <li><a href="#background">Background</a>
