@@ -11,7 +11,7 @@ using System.Resources;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Bio-Hazard Industries")]
 [assembly: AssemblyProduct("Resource Reflector")]
-[assembly: AssemblyCopyright("Copyright © 2014")]
+[assembly: AssemblyCopyright("Copyright © 1998 - 2017")]
 [assembly: AssemblyTrademark("Latency McLaughlin")]
 [assembly: AssemblyCulture("")]
 
@@ -33,6 +33,5 @@ using System.Resources;
 //      Revision
 //
 
-[assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyFileVersion("1.0.1.0")]
+[assembly: AssemblyVersion("1.0.2")]
 [assembly: NeutralResourcesLanguageAttribute("en-US")]

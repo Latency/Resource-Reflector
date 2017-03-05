@@ -263,12 +263,21 @@ namespace ResourceReflector {
           return ".ico";
         case ImageType.Cursor:
           return " .cur";
-        default:
-          return imageInfo.Image.Tag.ToString() == ".wav"
+        case ImageType.Image:
+          return imageInfo.Image.Tag?.ToString() == ".wav"
             ? ".wav"
             : (imageInfo.Image.RawFormat.Guid == ImageFormat.Jpeg.Guid
               ? ".jpg"
-              : (imageInfo.Image.RawFormat.Guid == ImageFormat.Gif.Guid ? ".gif" : (imageInfo.Image.RawFormat.Guid == ImageFormat.Png.Guid ? ".png" : ".bmp")));
+              : (imageInfo.Image.RawFormat.Guid == ImageFormat.Gif.Guid
+                ? ".gif"
+                : (imageInfo.Image.RawFormat.Guid == ImageFormat.Png.Guid
+                  ? ".png"
+                  : ".bmp"
+                  )
+                )
+              );
+        default:
+          throw new ArgumentOutOfRangeException();
       }
     }
 
@@ -333,19 +342,6 @@ namespace ResourceReflector {
 
           #endregion // Icon
 
-          #region Cursor
-
-          // Try to exstract the resource as an cursor.
-          try {
-            var cursor = new Cursor(stream);
-            imageInfos.Add(new ImageInfo(cursor, name), false);
-            continue;
-          } catch (ArgumentException) {
-            stream.Position = 0;
-          }
-
-          #endregion // Cursor
-
           #region Image
 
           // Try to exstract the resource as an image.
@@ -398,7 +394,10 @@ namespace ResourceReflector {
           try {
             var buffer = new byte[4];
             if (stream.Read(buffer, 0, 4) == 4 && buffer.SequenceEqual(new byte[] {
-              0x52, 0x49, 0x46, 0x46
+              0x52,
+              0x49,
+              0x46,
+              0x46
             })) {
               var image = Resources.Wav;
               image.Tag = ".wav";
@@ -616,9 +615,8 @@ namespace ResourceReflector {
     private void SaveAllResources(string folderName) {
       var failures = new Dictionary<string, string>();
       var cnt = 0;
-      var last = String.Empty;
-      foreach (var kvp in (Dictionary<ImageInfo, bool>) bindingSource.DataSource) {
-        var item = kvp.Key;
+      var last = string.Empty;
+      foreach (var item in (List<ImageInfo>) bindingSource.DataSource) {
         var path = folderName;
         var file = item.ResourceDetails.ResourceName;
         file = file.Remove(0, file.IndexOf('.') + 1);
@@ -628,7 +626,9 @@ namespace ResourceReflector {
         if (!CreateDirectory(path))
           failures.Add(file + ext, path);
 
-        file = file.Remove(file.LastIndexOf(".resources", StringComparison.Ordinal));
+        var index = file.LastIndexOf(".resources", StringComparison.Ordinal);
+        if (index > 0)
+          file = file.Remove(index);
         if (file != last)
           cnt = 0;
         last = file;
