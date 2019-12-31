@@ -364,7 +364,7 @@ namespace ResourceReflector {
             using (IResourceReader reader = new ResourceReader(stream)) {
               foreach (DictionaryEntry entry in reader) {
                 if (entry.Value is Icon || entry.Value is Image)
-                  imageInfos.Add(new ImageInfo(entry.Value, name), false);
+                  imageInfos.Add(new ImageInfo(entry.Value, entry.Key.ToString() ), false);
                 else {
                   var streamer = entry.Value as ImageListStreamer;
                   if (streamer != null) {
