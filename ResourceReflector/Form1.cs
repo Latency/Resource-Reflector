@@ -358,7 +358,7 @@ namespace ResourceReflector {
 
           #region Resource File
 
-          // Try to exstract the resource as an resource file.  (audio, other, etc.)
+          // Try to extract the resource as an resource file.  (audio, other, etc.)
           try {
             // The embedded resource in the stream is not an image, so read it into a ResourceReader and extract the values from there.
             using (IResourceReader reader = new ResourceReader(stream)) {
@@ -366,8 +366,7 @@ namespace ResourceReflector {
                 if (entry.Value is Icon || entry.Value is Image)
                   imageInfos.Add(new ImageInfo(entry.Value, entry.Key.ToString() ), false);
                 else {
-                  var streamer = entry.Value as ImageListStreamer;
-                  if (streamer != null) {
+                  if (entry.Value is ImageListStreamer streamer) {
                     // Load an ImageList with the ImageListStreamer and store a reference to every image it contains.
                     using (var imageList = new ImageList()) {
                       imageList.ImageStream = streamer;

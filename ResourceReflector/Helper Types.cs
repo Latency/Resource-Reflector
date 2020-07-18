@@ -51,8 +51,7 @@ namespace ResourceReflector {
       get {
         if (_image != null)
           return _image;
-        var o = SourceObject as Icon;
-        if (o != null)
+        if (SourceObject is Icon o)
           _image = o.ToBitmap();
         else {
           var cursor1 = SourceObject as Cursor;
@@ -63,8 +62,7 @@ namespace ResourceReflector {
             using (var grfx = Graphics.FromImage(_image))
               cursor.Draw(grfx, new Rectangle(Point.Empty, size));
           } else {
-            var image = SourceObject as Image;
-            if (image != null)
+            if (SourceObject is Image image)
               _image = image;
             else
               Debug.Fail("Unexpected type of source object.");

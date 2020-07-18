@@ -17,7 +17,7 @@ namespace ResourceReflector {
 
     public static void InvokeEx<T>(this T @this, Action<T> action) where T : Control {
       if (@this.InvokeRequired) {
-        @this.Invoke(action, new object[] { @this });
+        @this.Invoke(action, @this);
       } else {
         if (!@this.IsHandleCreated)
           return;
