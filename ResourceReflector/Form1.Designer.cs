@@ -1,4 +1,4 @@
-namespace ResourceReflector {
+namespace Resource_Reflector {
   partial class Form1 {
     /// <summary>
     /// Required designer variable.
@@ -147,7 +147,7 @@ namespace ResourceReflector {
       this.closeToolStripButton.Size = new System.Drawing.Size(23, 22);
       this.closeToolStripButton.Text = "&Close";
       this.closeToolStripButton.ToolTipText = "Close Assembly";
-      this.closeToolStripButton.Click += new System.EventHandler(this.closeToolStripButton_Click);
+      this.closeToolStripButton.Click += new System.EventHandler(this.CloseToolStripButton_Click);
       // 
       // toolStripSeparator2
       // 

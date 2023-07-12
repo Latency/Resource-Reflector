@@ -1,9 +1,9 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net45;net48;net5.0;netcoreapp3.1</TargetFrameworks>
+    <TargetFrameworks>net452</TargetFrameworks>
     <RepositoryUrl>https://github.com/Latency/Resource-Reflector</RepositoryUrl>
-    <Version>9.0.0</Version>
+    <Version>9.1.0</Version>
     <PackageProjectUrl>https://github.com/Latency/Resource-Reflector</PackageProjectUrl>
     <LicenseUrl>https://github.com/Latency/Resource-Reflector/blob/master/LICENSE</LicenseUrl>
     <UseWindowsForms>true</UseWindowsForms>
@@ -12,11 +12,50 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <OutputType>WinExe</OutputType>
     <StartupObject>ResourceReflector.Program</StartupObject>
-    <AssemblyOriginatorKeyFile>..\..\..\..\aaec.snk</AssemblyOriginatorKeyFile>
-    <ApplicationIcon>Resources\Icon1.ico</ApplicationIcon>
+	  <ApplicationIcon>Resources\Icon1.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\att.wav" />
+    <None Remove="Resources\BlueApex.gif" />
+    <None Remove="Resources\Cursor1.cur" />
+    <None Remove="Resources\DerangedCoder.gif" />
+    <None Remove="Resources\Divers mid-flight.jpg" />
+    <None Remove="Resources\flash.gif" />
+    <None Remove="Resources\FlyingWeirdo.jpg" />
+    <None Remove="Resources\GlowingBackground.jpg" />
+    <None Remove="Resources\goobi.jpg" />
+    <None Remove="Resources\GreyPusher.gif" />
+    <None Remove="Resources\GuyWithHat.gif" />
+    <None Remove="Resources\Icon1.ico" />
+    <None Remove="Resources\nohands.jpg" />
+    <None Remove="Resources\Robot up close.jpg" />
+    <None Remove="Resources\Robot.jpg" />
+    <None Remove="Resources\skinnydip.jpg" />
+    <None Remove="Resources\slavedriver.gif" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\att.wav" />
+    <EmbeddedResource Include="Resources\BlueApex.gif" />
+    <EmbeddedResource Include="Resources\Cursor1.cur" />
+    <EmbeddedResource Include="Resources\DerangedCoder.gif" />
+    <EmbeddedResource Include="Resources\Divers mid-flight.jpg" />
+    <EmbeddedResource Include="Resources\flash.gif" />
+    <EmbeddedResource Include="Resources\FlyingWeirdo.jpg" />
+    <EmbeddedResource Include="Resources\GlowingBackground.jpg" />
+    <EmbeddedResource Include="Resources\goobi.jpg" />
+    <EmbeddedResource Include="Resources\GreyPusher.gif" />
+    <EmbeddedResource Include="Resources\GuyWithHat.gif" />
+    <EmbeddedResource Include="Resources\Icon1.ico" />
+    <EmbeddedResource Include="Resources\nohands.jpg" />
+    <EmbeddedResource Include="Resources\Robot up close.jpg" />
+    <EmbeddedResource Include="Resources\Robot.jpg" />
+    <EmbeddedResource Include="Resources\skinnydip.jpg" />
+    <EmbeddedResource Include="Resources\slavedriver.gif" />
+  </ItemGroup>
+
+	<ItemGroup>
     <EmbeddedResource Update="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

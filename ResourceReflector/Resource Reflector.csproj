@@ -1,21 +1,52 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFrameworks>net45;net48;net5.0;netcoreapp3.1</TargetFrameworks>
-    <RepositoryUrl>https://github.com/Latency/Resource-Reflector</RepositoryUrl>
-    <Version>9.0.0</Version>
-    <PackageProjectUrl>https://github.com/Latency/Resource-Reflector</PackageProjectUrl>
-    <LicenseUrl>https://github.com/Latency/Resource-Reflector/blob/master/LICENSE</LicenseUrl>
-    <UseWindowsForms>true</UseWindowsForms>
-    <Description>Test library for Resource Reflector</Description>
-    <OutputType>Library</OutputType>
-    <AssemblyOriginatorKeyFile>..\..\..\..\aaec.snk</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFrameworks>net452</TargetFrameworks>
+		<RepositoryUrl>https://github.com/Latency/Resource-Reflector</RepositoryUrl>
+		<Version>9.1.0</Version>
+		<PackageProjectUrl>https://github.com/Latency/Resource-Reflector</PackageProjectUrl>
+		<LicenseUrl>https://github.com/Latency/Resource-Reflector/blob/master/LICENSE</LicenseUrl>
+		<UseWindowsForms>true</UseWindowsForms>
+		<UseWPF>true</UseWPF>
+		<Description>Test library for Resource Reflector</Description>
+		<OutputType>WinExe</OutputType>
+		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+		<Nullable>enable</Nullable>
+		<LangVersion>preview</LangVersion>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <EmbeddedResource Update="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Include="Resources\Wav.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Properties\Resources.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Resources.resx</DependentUpon>
+	  </Compile>
+	  <Compile Update="Properties\Settings.Designer.cs">
+	    <DesignTimeSharedInput>True</DesignTimeSharedInput>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Settings.settings</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Update="Form1.resx">
+			<DependentUpon>Form1.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Properties\Resources.resx">
+		  <Generator>ResXFileCodeGenerator</Generator>
+		  <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="Properties\Settings.settings">
+	    <Generator>SettingsSingleFileGenerator</Generator>
+	    <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+	  </None>
+	</ItemGroup>
 
 </Project>
